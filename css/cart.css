@@ -601,6 +601,10 @@ footer li {
     padding: 15px 15px;
 }
 
+footer .fa{
+    color: #007bff;
+}
+
 
 footer .fa:hover {
     color: #007bff;
