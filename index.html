@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Online Store</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="cart.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+	
+
+	<!-- START OF HEADER  -->
+	<header>
+		<nav>
+			<p class="logo">ShopNow</p>
+			<div class="cart">
+				<ul>
+					<li onclick="scrollToElement('contact')" class="scroll">Contact us</li>
+					<li onclick="scrollToElement('services')" class="scroll">Services</li>
+					<li>
+						<div onclick="toggleBox()" class="logocount"> <i class='fa fa-shopping-cart'></i>
+							<p id="count">0</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- END OF HEADER  -->
+
+
+
+
+	<!--START OF CART SECTION-->
+	<main class="box" id="infoBox"><span class="close-button" onclick="toggleBox()">&times;</span>
+		<div class="sidebar">
+			<div class="head">
+				<p>My Cart</p>
+			</div>
+			<div id="cartitem">Your Cart is Empty</div>
+			<div class="foot">
+				<div id="cart">
+					<ul id="cartItems">
+						<!--ITEMS ADDED HERE DYNAMICALLY-->
+					</ul>
+				</div>
+				<hr>
+				<div class="bottomcart">
+					<h2>TOTAL : </h2>
+					<h2 id="totalPrice">Total: ₹0.00</h2>
+				</div>
+				<div class="buynow" id="buyDiv">
+					<div id="cartitem"><button id="BuyNow">Buy Now</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--END OF CART SECTION-->
+
+
+
+
+
+	<!--START OF SEARCH PART-->
+	<div class="container">
+		<input type="text" id="searchBox" maxlength="12" placeholder="Search" class="searchbar">
+		<img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" onclick="searchElement()"
+			alt="search icon" class="button">
+	</div>
+	<!--END OF SEARCH PART-->
+
+
+
+
+
+	<!--START OF CONTAINERIMAGES-->
+	<div class="containerimages">
+		<div class="offerimage" onclick="scrollToElement('mobile')">
+			<img src="images/mobilesale.jpg">
+		</div>
+		<div class="offerimage" onclick="scrollToElement('watch')">
+			<img src="images/watchsale.jpg">
+		</div>
+		<div class="offerimage" onclick="scrollToElement('tv')">
+			<img src="images/tvsale.jpeg">
+		</div>
+		<div class="offerimage" onclick="scrollToElement('earphone')">
+			<img src="images/earbudsale.jpg">
+		</div>
+	</div>
+	<!--END OF CONTAINERIMAGES-->
+
+
+
+
+
+	<!--START OF POPUPMESSAGE-->
+	<div class="popup-message" id="popupMessage">
+		<p id="popupMessageText"></p>
+	</div>
+	<!--END OF POPUPMESSAGE-->
+
+
+
+
+
+	<!--START OF EARPHONES-->
+	<section id="earphone">
+		<div class="container1">
+			<h1>Earphones</h1>
+			<div class="rowproducts">
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,dpr_2.0,h_300,q_auto,w_300/qryvupiwworjyoohowii.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Sony Earbuds</h3>
+						<p id="product_price">Noise Cancelling True Wireless Earbuds</p>
+						<h3 id="product_price"> $4,999</h3>
+						<button
+							onclick="addToCart('Sony Earbuds', 4999, 'https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,dpr_2.0,h_300,q_auto,w_300/qryvupiwworjyoohowii.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/enco-buds/navigation/Enco-buds-navigation-white-v2.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Oppo Enco Buds</h3>
+						<p id="product_price">24H Battery Life, Supports Dolby Atmos, Noise Cancellation</p>
+						<h3 id="product_price">Rs. 1,799</h3>
+						<button
+							onclick="addToCart('Oppo Enco Buds', 1799, 'https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/enco-buds/navigation/Enco-buds-navigation-white-v2.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://avatars.mds.yandex.net/get-mpic/1680954/img_id977123515777119445.png/orig">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">realme TechLife Buds T100 </h3>
+						<p id="product_price">Truly Wireless in Ear Earbuds with mic, AI ENC for Calls</p>
+						<h3 id="product_price">Rs. 1,499</h3>
+						<button
+							onclick="addToCart('realme Buds', 1499, 'https://avatars.mds.yandex.net/get-mpic/1680954/img_id977123515777119445.png/orig')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.jbl.com.ph/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw5dd477f3/1.JBL_Wave_Vibe%20200TWS_Hero_Black.png?sw=537&sfrm=png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">JBL Wave 200</h3>
+						<p id="product_price">Deep Bass Sound, Dual Connect Technology, Quick Charge</p>
+						<h3 id="product_price">Rs. 2,999</h3>
+						<button
+							onclick="addToCart('JBL Wave 200', 2999, 'https://www.jbl.com.ph/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw5dd477f3/1.JBL_Wave_Vibe%20200TWS_Hero_Black.png?sw=537&sfrm=png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/d6f427fc-0529-40e5-824b-cb849c1943ce_1024x1024.png?v=1625552656">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Boat Airdopes</h3>
+						<p id="product_price">True Wireless Earbuds with Stereo Calling</p>
+						<h3 id="product_price">Rs. 1099</h3>
+						<button
+							onclick="addToCart('Boat Airdopes', 1099, 'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/d6f427fc-0529-40e5-824b-cb849c1943ce_1024x1024.png?v=1625552656')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://media.croma.com/image/upload/v1682594804/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/268306_0_ov0eo3.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Boult Audio Z40</h3>
+						<p id="product_price">60H Playtime, Zen™ ENC Mic, Low Latency Gaming</p>
+						<h3 id="product_price">Rs. 1,299</h3>
+						<button
+							onclick="addToCart('Boult Audio Z40', 1299, 'https://media.croma.com/image/upload/v1682594804/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/268306_0_ov0eo3.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END OF EARPHONES-->
+
+
+
+
+
+	<!--START OF MOBILES-->
+	<section id="mobile">
+		<div class="container1">
+			<h1>Mobiles</h1>
+			<div class="rowproducts">
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://unlocktechy.com/wp-content/uploads/2022/05/Samsung-Galaxy-M34-5G.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Samsung Galaxy M32 5G </h3>
+						<p>120Hz sAMOLED Display | 50MP Triple Cam | 6000 mAh Battery</p>
+						<h3 id="product_price">Rs. 20,999</h3>
+						<button
+							onclick="addToCart('Samsung M32', 20999, 'https://unlocktechy.com/wp-content/uploads/2022/05/Samsung-Galaxy-M34-5G.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-11-pro/specs01.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Redmi Note 12 5G</h3>
+						<p>120Hz sAMOLED | Snapdragon® 4 Gen 1 | 48MP AI Triple Camera</p>
+						<h3 id="product_price">Rs. 18,999</h3>
+						<button
+							onclick="addToCart('Redmi Note 12', 18999, 'https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-11-pro/specs01.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image" src="https://image01.realme.net/general/20220513/1652442288823.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">realme narzo N55</h3>
+						<p>33W Segment Fastest Charging | Super High-res 64MP Primary</p>
+						<h3 id="product_price">Rs. 12,999</h3>
+						<button
+							onclick="addToCart('realme narzo N55', 12999, 'https://image01.realme.net/general/20220513/1652442288823.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.mobile-phantom.com/fileadmin/sitedesign/Resources/Public/Image/product/phantomx2/4.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Tecno Phantom X2 5G</h3>
+						<p>5G Processor | Dual Curved AMOLED Display | 64MP Camera</p>
+						<h3 id="product_price">Rs. 36,999</h3>
+						<button
+							onclick="addToCart('Tecno Phantom X2', 36999, 'https://www.mobile-phantom.com/fileadmin/sitedesign/Resources/Public/Image/product/phantomx2/4.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://cdn.shopify.com/s/files/1/1126/0898/products/black-img_700x700.png?v=1677082382">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">OnePlus 11R 5G</h3>
+						<p>16GB | 256GB | 100W fastest Charging | 64MP Sony Camera</p>
+						<h3 id="product_price">Rs. 44,999</h3>
+						<button
+							onclick="addToCart('OnePlus 11R 5G', 44999, 'https://cdn.shopify.com/s/files/1/1126/0898/products/black-img_700x700.png?v=1677082382')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image" src="https://www.pngmart.com/files/22/iPhone-14-PNG-Clipart.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Apple iPhone 14 Pro</h3>
+						<p>Super Retina XDR display | Silver | 512 GB | 4K Dolby Vision</p>
+						<h3 id="product_price">Rs. 1,69,999</h3>
+						<button
+							onclick="addToCart('iPhone 14 Pro', 169999, 'https://www.pngmart.com/files/22/iPhone-14-PNG-Clipart.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END OF MOBILES-->
+
+
+
+
+	<!--START OF SMART WATCHES-->
+	<section id="watch">
+		<div class="container1">
+			<h1>Smart Watches</h1>
+			<div class="rowproducts">
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://t3india.com/wp-content/uploads/2023/04/Fastrack-Revoltt-FS1-Pro-1536x1536.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Fastrack Limitless FS1 Pro</h3>
+						<p>1.96" Amoled Display |SingleSync BT Calling |Fast Charging</p>
+						<h3 id="product_price">Rs. 3,495</h3>
+						<button
+							onclick="addToCart('Fastrack', 3495, 'https://t3india.com/wp-content/uploads/2023/04/Fastrack-Revoltt-FS1-Pro-1536x1536.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://cdn.shopify.com/s/files/1/0069/2695/8663/products/realme-watch-s-black-1_1500x_e870935b-23c5-4f09-a450-93c33235106c_580x.png?v=1615446536">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">realme Smart Watch S</h3>
+						<p>15 Days Battery Life, SpO2 & Heart Rate Monitoring, IP68</p>
+						<h3 id="product_price">Rs. 4,299</h3>
+						<button
+							onclick="addToCart('realme Watch', 4299, 'https://cdn.shopify.com/s/files/1/0069/2695/8663/products/realme-watch-s-black-1_1500x_e870935b-23c5-4f09-a450-93c33235106c_580x.png?v=1615446536')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://cdn.shopify.com/s/files/1/0997/6284/files/tap-to-play_1.png?12309054996178094583">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Noise ColorFit Ultra 3</h3>
+						<p>1.96" AMOLED Display, Premium Metallic Build, Functional Crown</p>
+						<h3 id="product_price">Rs. 4,499</h3>
+						<button
+							onclick="addToCart('Noise ColorFit', 4499, 'https://cdn.shopify.com/s/files/1/0997/6284/files/tap-to-play_1.png?12309054996178094583')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://api.sammobile.com/static/3-028_product_galaxy_watch5pro_blacktitanium_l_perspective_LI.png?1660133185">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Samsung Galaxy Watch 5</h3>
+						<p>Bluetooth (44 mm, Black, Compatible with Android only)</p>
+						<h3 id="product_price">Rs. 30,999</h3>
+						<button
+							onclick="addToCart('Samsung Watch', 30999, 'https://api.sammobile.com/static/3-028_product_galaxy_watch5pro_blacktitanium_l_perspective_LI.png?1660133185')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.androidpolice.com/wp-content/uploads/2021/08/30/Gen-6-FTW4059-Right-01.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Fossil</h3>
+						<p>Fossil Gen 6 Digital Black Dial Men's Watch-FTW4059</p>
+						<h3 id="product_price">Rs. 24,995</h3>
+						<button
+							onclick="addToCart('Fossil', 24995, 'https://www.androidpolice.com/wp-content/uploads/2021/08/30/Gen-6-FTW4059-Right-01.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://photos5.appleinsider.com/price_guide/apple-watch-series-8-pp-header.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Apple Watch Series 8</h3>
+						<p>Graphite Stainless Steel Case & Graphite Milanese Loop</p>
+						<h3 id="product_price">Rs. 1,69,999</h3>
+						<button
+							onclick="addToCart('Apple Watch', 169999, 'https://photos5.appleinsider.com/price_guide/apple-watch-series-8-pp-header.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END OF SMART WATCHES-->
+
+
+
+	<!--START OF TELEVISION-->
+	<section id="tv">
+		<div class="container1">
+			<h1>Televisons</h1>
+			<div class="rowproducts">
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.sony.co.in/image/df141637bcc7e5ba0446de99160e5915?fmt=png-alpha&wid=676&hei=400">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Sony Bravia 164cm </h3>
+						<p>(65 inches) 4K Ultra HD Smart LED Google TV KD-65X74K</p>
+						<h3 id="product_price">Rs. 74,990</h3>
+						<button
+							onclick="addToCart('Sony 164cm', 74990, 'https://www.sony.co.in/image/df141637bcc7e5ba0446de99160e5915?fmt=png-alpha&wid=676&hei=400')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image" src="https://clipground.com/images/samsung-tv-png-1.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">Samsung 108 cm</h3>
+						<p>(43 inches) The Frame Series 4K Smart QLED TV </p>
+						<h3 id="product_price">Rs. 56,990</h3>
+						<button
+							onclick="addToCart('Samsung 108cm', 56990, 'https://clipground.com/images/samsung-tv-png-1.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://www.xda-developers.com/files/2021/06/OnePlus-TV-U1S-side.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">OnePlus 138 cm</h3>
+						<p>(50 inches) Y Series 4K Ultra HD Smart Android LED TV 50Y1S Pro</p>
+						<h3 id="product_price">Rs. 30,999</h3>
+						<button
+							onclick="addToCart('OnePlus 138cm', 30999, 'https://www.xda-developers.com/files/2021/06/OnePlus-TV-U1S-side.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://media.croma.com/image/upload/v1663783561/Croma%20Assets/Entertainment/Television/Images/238739_1_vvgsgp.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">LG 164 cm</h3>
+						<p>(65 inches) 4K Ultra HD Smart NanoCell TV 65NANO73SQA </p>
+						<h3 id="product_price">Rs. 78,999</h3>
+						<button
+							onclick="addToCart('LG 164cm', 78999, 'https://media.croma.com/image/upload/v1663783561/Croma%20Assets/Entertainment/Television/Images/238739_1_vvgsgp.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://media.croma.com/image/upload/v1664412968/Croma%20Assets/Entertainment/Television/Images/255759_1_p4a4em.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">TCL 139 cm</h3>
+						<p>(55 inches) 4K Ultra HD Smart QLED Google TV 55T6G</p>
+						<h3 id="product_price">Rs. 50,995</h3>
+						<button
+							onclick="addToCart('TCL 139cm', 50995, 'https://media.croma.com/image/upload/v1664412968/Croma%20Assets/Entertainment/Television/Images/255759_1_p4a4em.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="colproducts">
+					<div class="images">
+						<img id="product_image"
+							src="https://media.croma.com/image/upload/v1664410639/Croma%20Assets/Entertainment/Television/Images/242862_1_vdknpj.png">
+					</div>
+					<div class="product_decs">
+						<h3 id="product_name">MI 138 cm</h3>
+						<p>(55 inches) X Series 4K Ultra HD Smart Android LED TV</p>
+						<h3 id="product_price">Rs. 37,999</h3>
+						<button
+							onclick="addToCart('MI 138cm', 37999, 'https://media.croma.com/image/upload/v1664410639/Croma%20Assets/Entertainment/Television/Images/242862_1_vdknpj.png')"
+							id="cart-btn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END OF TELEVISION-->
+
+
+
+
+
+
+	<!--START OF SERVICES-->
+	<section id="services">
+		<div class="containerservices">
+			<h1>Our Services</h1>
+			<div class="rowservices">
+				<div class="colservices">
+					<div class="icon">
+						<i class="fa fa-phone"></i>
+					</div>
+					<h3> 24/7 Support</h3>
+					<p>on order related queries</p>
+				</div>
+
+				<div class="colservices">
+					<div class="icon">
+						<i class="fa fa-shopping-cart"></i>
+					</div>
+					<h3> Return within 30 days</h3>
+					<p>of receiving your order</p>
+				</div>
+
+				<div class="colservices">
+					<div class="icon">
+						<i class="fa fa-truck"></i>
+					</div>
+					<h3>Get free delivery</h3>
+					<p>on orders above 499 Rs.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END OF SERVICES-->
+
+
+
+
+
+	<!--START OF CONTACT-->
+	<div id="contact">
+		<div class="container">
+			<h1>Get In Touch</h1>
+			<hr style="width: 200px; border: 2px solid black;">
+			<div class="row">
+				<div class="col">
+					<form class="contact-form">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your Name.." id="nameInput">
+						</div>
+						<div class="form-group">
+							<input type="number" class="form-control" placeholder="Phone no." id="phoneInput">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Email.." id="mailInput">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" rows="4" placeholder="Message.."
+								id="msgInput"></text>
+						</div>
+
+						<center>
+							<div onclick="submitPop()" class="btn-primary">Submit</div>
+						</center>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END OF CONTACT-->
+
+
+
+
+
+
+	<!--START OF FOOTER-->
+	<footer>
+		<ul class="socialicons">
+			<li><a href="https://www.linkedin.com/in/shubham-matole-81335021b"><i class="fa fa-linkedin"></i></a></li>
+			<li><a href="https://www.instagram.com/shubham._007_"><i class="fa fa-instagram"></i></a></li>
+			<li><a href="https://github.com/Shubhammatole16"><i class="fa fa-github"></i></a></li>
+			<li><a href="https://www.facebook.com/shubham.matole.7"><i class="fa fa-facebook"></i></a></li>
+		</ul>
+	</footer>
+	<!--END OF FOOTER-->
+
+
+
+	<script src="javascript/cart.js"></script>
+	<script src="javascript/serach.js"></script>
+</body>
+
+</html>
